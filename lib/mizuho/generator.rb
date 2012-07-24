@@ -143,7 +143,7 @@ private
 			
 			if preamble
 				preamble.remove
-				preamble_copy = (doc / "#header > h1")[0].add_next_sibling(preamble.to_s)[0]
+				preamble_copy = (doc / "#header > h1")[0].add_next_sibling(Nokogiri::HTML.fragment(preamble.to_s))[0]
 				preamble_copy['id'] = 'preamble'
 			end
 			
